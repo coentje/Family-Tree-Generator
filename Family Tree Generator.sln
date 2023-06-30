@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FTG.Cli", "FTG.Cli\FTG.Cli.csproj", "{A3AD7402-36EB-4E57-AED3-7C1B50EA51E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FTG.Common", "FTG.Common\FTG.Common.csproj", "{F3F4DFE3-0523-4CFE-89FC-0E8B699EA077}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FTG.Generators", "FTG.Generators\FTG.Generators.csproj", "{074C6AF0-7C9F-4722-9A25-49DAF5621A0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FTG.Tests", "FTG.Tests\FTG.Tests.csproj", "{403A329B-3605-4256-9460-71A0E8F86E9F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3AD7402-36EB-4E57-AED3-7C1B50EA51E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3AD7402-36EB-4E57-AED3-7C1B50EA51E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3AD7402-36EB-4E57-AED3-7C1B50EA51E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3AD7402-36EB-4E57-AED3-7C1B50EA51E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3F4DFE3-0523-4CFE-89FC-0E8B699EA077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3F4DFE3-0523-4CFE-89FC-0E8B699EA077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3F4DFE3-0523-4CFE-89FC-0E8B699EA077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3F4DFE3-0523-4CFE-89FC-0E8B699EA077}.Release|Any CPU.Build.0 = Release|Any CPU
+		{074C6AF0-7C9F-4722-9A25-49DAF5621A0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{074C6AF0-7C9F-4722-9A25-49DAF5621A0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{074C6AF0-7C9F-4722-9A25-49DAF5621A0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{074C6AF0-7C9F-4722-9A25-49DAF5621A0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{403A329B-3605-4256-9460-71A0E8F86E9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{403A329B-3605-4256-9460-71A0E8F86E9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{403A329B-3605-4256-9460-71A0E8F86E9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{403A329B-3605-4256-9460-71A0E8F86E9F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

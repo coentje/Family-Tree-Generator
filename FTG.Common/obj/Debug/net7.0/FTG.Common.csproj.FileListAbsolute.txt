@@ -1,0 +1,12 @@
+/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Common/bin/Debug/net7.0/FTG.Common.deps.json
+/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Common/bin/Debug/net7.0/FTG.Common.dll
+/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Common/bin/Debug/net7.0/FTG.Common.pdb
+/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Common/obj/Debug/net7.0/FTG.Common.csproj.AssemblyReference.cache
+/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Common/obj/Debug/net7.0/FTG.Common.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Common/obj/Debug/net7.0/FTG.Common.AssemblyInfoInputs.cache
+/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Common/obj/Debug/net7.0/FTG.Common.AssemblyInfo.cs
+/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Common/obj/Debug/net7.0/FTG.Common.csproj.CoreCompileInputs.cache
+/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Common/obj/Debug/net7.0/FTG.Common.dll
+/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Common/obj/Debug/net7.0/refint/FTG.Common.dll
+/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Common/obj/Debug/net7.0/FTG.Common.pdb
+/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Common/obj/Debug/net7.0/ref/FTG.Common.dll

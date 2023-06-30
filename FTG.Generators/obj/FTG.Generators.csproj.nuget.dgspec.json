@@ -1,0 +1,132 @@
+{
+  "format": 1,
+  "restore": {
+    "/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Generators/FTG.Generators.csproj": {}
+  },
+  "projects": {
+    "/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Common/FTG.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Common/FTG.Common.csproj",
+        "projectName": "FTG.Common",
+        "projectPath": "/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Common/FTG.Common.csproj",
+        "packagesPath": "/home/cloos/.nuget/packages/",
+        "outputPath": "/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Common/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/cloos/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.3, 7.0.3]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.103/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Generators/FTG.Generators.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Generators/FTG.Generators.csproj",
+        "projectName": "FTG.Generators",
+        "projectPath": "/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Generators/FTG.Generators.csproj",
+        "packagesPath": "/home/cloos/.nuget/packages/",
+        "outputPath": "/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Generators/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/cloos/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Common/FTG.Common.csproj": {
+                "projectPath": "/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Common/FTG.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.3, 7.0.3]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.103/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

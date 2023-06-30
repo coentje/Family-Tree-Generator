@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "u+hpmEQxihCKMYLG9cqOKkY1tJPmJbckPt2icGZ/nYKQpDbPZm0rLYOLN7EHiISrlfnn+SBs1aA6MxVwcebJ5A==",
+  "success": true,
+  "projectFilePath": "/mnt/shared/Sources/Personal/Family Tree Generator/FTG.Cli/FTG.Cli.csproj",
+  "expectedPackageFiles": [
+    "/home/cloos/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.3/microsoft.aspnetcore.app.ref.7.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
