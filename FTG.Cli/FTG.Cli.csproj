@@ -10,7 +10,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="..\files\**\*.csv ">
+    <Content Include="names\**\*.csv ">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>  
   </ItemGroup>

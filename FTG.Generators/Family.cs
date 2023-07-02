@@ -8,7 +8,7 @@ namespace FTG.Generators
 {
     public class FamilyGenerator
     {
-        private bool _currentYearMode = false;
+        private bool _currentYearMode = true;
         private string _familyName = string.Empty;
         private int _startYear = 1000;
         private int _endYear = 0;
@@ -16,13 +16,19 @@ namespace FTG.Generators
 
         private Family _family = new Family();
 
-
+        public IEnumerable<Person> FamilyMembers => _family.People;
 
         private void GenerateKids(Person person, Person spouse)
         {
 
             var endMarriage = new[] { person.DeathDate.Value, spouse.DeathDate.Value }.Min(); // Forgetting that divorce exists for the moment.
-            var yearsMarried = (int)Math.Floor((person.MarriageDate.Value - endMarriage).TotalDays / 256.25);
+            var marriageDate = new [] {person.MarriageDate ?? spouse.MarriageDate ?? person.BirthDate.GetMarriedDate(), endMarriage}.Min();
+
+            spouse.MarriageDate = marriageDate;
+            person.MarriageDate = marriageDate;
+
+            var yearsMarried = endMarriage.Year - person.MarriageDate.Value.Year;
+
             var fertilityStart = person.Gender switch
             {
                 Gender.Male => spouse.MarriageAge.Value,
@@ -68,11 +74,12 @@ namespace FTG.Generators
                             person.DeathDate = kid.BirthDate;
                             UpdatePerson(person);
                         }
-                        return;
+                        continue;
                     }
                     yearsOfMarriage += (int)Math.Floor(Helpers.Rnd(Constants.Children.Delay.Mean, Constants.Children.Delay.StdDev));
+                } else {
+                    yearsOfMarriage++;
                 }
-                yearsOfMarriage++;
             }
         }
 
@@ -80,14 +87,17 @@ namespace FTG.Generators
         {
             var spouseCC = NameGenerator.GetRandomCountryCode();
             var newParent = _family.People.First(p => p.Id == id);
+            newParent.MarriageDate = newParent.BirthDate.GetMarriedDate();
             var partialSpouse = new Person()
             {
                 ParentNodeId = id,
+                BirthDate = newParent.MarriageDate.Value.GetBirthDateFromMarriageDate(Helpers.OppositeGender(newParent.Gender)),
                 SpouseId = id,
                 Generation = newParent.Generation,
-                MarriageDate = newParent.MarriageDate,
-                Gender = Gender.Male,
+                CountryCode = NameGenerator.GetRandomCountryCode(),
             };
+            newParent.SpouseId = partialSpouse.Id;
+
             var spouse = FinishPerson(partialSpouse);
             _family.People.Add(spouse);
             GenerateKids(newParent, spouse);
@@ -113,6 +123,7 @@ namespace FTG.Generators
                             ParentNodeId = id,
                             SpouseId = id,
                             Generation = newParent.Generation,
+                            CountryCode = NameGenerator.GetRandomCountryCode(),
                             MarriageDate = grief,
                         };
                         spouse = FinishPerson(partialSpouse);
@@ -138,6 +149,7 @@ namespace FTG.Generators
         }
         public void PopulateLineage(int startYear)
         {
+            _currentYearMode = false;
             PopulateLineage(startYear, startYear + 50);
         }
         public void PopulateLineage(int startYear, int endYear)
@@ -162,7 +174,8 @@ namespace FTG.Generators
                 Gender = Gender.Male,
                 BirthDate = Helpers.GetRandomDateFromYear(startYear),
             };
-            var person = FinishPerson(partialPerson);
+            var person = FinishPerson(partialPerson, true);
+            person.DeathDate = person.BirthDate.AddYears(86); // Just trying give the first couple in the line a better change to bear children
             _family.People.Add(person);
 
             var partialSpouse = new Person()
@@ -174,7 +187,7 @@ namespace FTG.Generators
                 BirthDate = Helpers.BirthDateFromMarriageDate(person.MarriageDate.Value, Gender.Female),
             };
             
-            var spouse = FinishPerson(partialSpouse);
+            var spouse = FinishPerson(partialSpouse, true);
             _family.People.Add(spouse);
             person.SpouseId = spouse.Id;
             UpdatePerson(person);

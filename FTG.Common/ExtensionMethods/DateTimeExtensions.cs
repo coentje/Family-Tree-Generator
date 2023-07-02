@@ -21,7 +21,7 @@ namespace FTG.Common.ExtensionMethods
 
         public static DateTime GetDeathDate(this DateTime dtm)
         {
-            var chanceToDie = new Dictionary<int, double>() { { 0, 0.02 }, { 1, 0.01 }, { 2, 0.005 }, { 5, 0.004 }, { 10, 0.003 }, { 16, 0.002 }, { 21, 0.005 }, { 26, 0.002 }, { 32, 0.001 }, { 42, 0.003 }, { 55, 0.008 }, { 65, 0.01 }, { 75, 0.02 }, { 80, 0.03 }, { 85, 0.05 }, { 90, 0.1 }, { 95, 0.2 }, { 100, 0.3 }, { 105, 0.5 }, { 110, 0.8 }, { 125, 1.0 } };
+            var chanceToDie = new Dictionary<int, double>() { { 0, 0.02 }, { 1, 0.01 }, { 2, 0.005 }, { 5, 0.004 }, { 10, 0.003 }, { 16, 0.002 }, { 21, 0.005 }, { 26, 0.002 }, { 32, 0.001 }, { 42, 0.003 }, { 55, 0.008 }, { 65, 0.01 }, { 75, 0.02 }, { 80, 0.03 }, { 85, 0.05 }, { 90, 0.1 }, { 95, 0.2 }, { 100, 0.3 }, { 105, 0.5 }, { 110, 0.8 }, { 125, 1000.0 } };
             return GetDate(dtm, chanceToDie);
         }
 
@@ -33,22 +33,34 @@ namespace FTG.Common.ExtensionMethods
 
         public static DateTime GetBirthDateFromMarriageDate(this DateTime dtm, Gender gender)
         {
-            throw new NotImplementedException();
+            var mAge = Helpers.GetMarriageAge(gender);
+            var yearMarried = dtm.Year - mAge;
+            return dtm.GetRandomDateFromYear(yearMarried);
         }
 
-        internal static DateTime GetDate(DateTime dtm, IDictionary<int, double> thresholds)
+        internal static DateTime GetDate(DateTime dtm, IDictionary<int, double> thresholds, int maxAge = 125)
         {
             var done = false;
             var age = 0;
             var currentYear = dtm.Year;
             var newDate = new DateTime(1900, 1, 1);
+            var sortedThresholds = new SortedDictionary<int,double>();
+            foreach(var kvp in thresholds) sortedThresholds.Add(kvp.Key, kvp.Value);
 
             while (!done)
             {
-                var chance = thresholds.Where(t => t.Key <= age).OrderByDescending(t => t.Key).First().Value;
+                
+                // var chance = thresholds.Where(t => t.Key <= age).OrderByDescending(t => t.Key).First();
+                var keys = new List<int>(thresholds.Keys);
+                var index = keys.BinarySearch(age);
+                if(index<0) {
+                    index = index * -1 -2;
+                }
+                
+                var chance = thresholds[keys[index]];
                 var luck = _random.NextDouble();
 
-                done = chance > luck;
+                done = chance > luck || maxAge <= age;;
 
                 if (done)
                 {
