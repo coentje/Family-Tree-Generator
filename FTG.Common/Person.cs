@@ -10,9 +10,9 @@ namespace FTG.Common
     public class Person
     {
         public Guid Id { get; private set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Clan { get; set; }
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
+        public string Clan { get; set; } = string.Empty;
         public Gender Gender { get; set; } = Gender.Unknown;
         public DateTime BirthDate { get; set; }
         public DateTime? DeathDate { get; set; }
@@ -29,10 +29,6 @@ namespace FTG.Common
         public string PersonalityType { get; set; }
         public string PersonalityTypeName => Helpers.GetPersonalityTypeName(PersonalityType);
 
-        public Person()
-        {
-            Id = Guid.NewGuid();
-
-        }
+        public Person() => Id = Guid.NewGuid();
     }
 }
